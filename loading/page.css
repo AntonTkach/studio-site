@@ -34,7 +34,7 @@ body * {
     /*height: 100px;*/
 }
 #loadingBar {
-    width: 1%;
+    /*width: 1%;*/
     height: 30px;
     background-color: green;
     /*display: inline;*/
@@ -52,6 +52,65 @@ body * {
     word-wrap: break-word;
     word-break: break-all;
 }
+
+.bar {
+    position:absolute;
+    /*top: 0;*/
+    height: 100%;
+    overflow: hidden;
+}
+
+.bar span {
+    position: absolute;
+    display: block;
+    width: 400px;
+    height: 50%;
+    text-align: center;
+}
+.bar.positive {
+    background: #fff;
+    left: 0;
+    width: 54%;
+    -webkit-animation: animate-positive 4s;
+    animation: animate-positive 4s;
+}
+.bar.positive span {
+    left: 0;
+    color: #333;
+}
+.bar.negative {
+    background: #07a4dd;
+    right: 0;
+    width: 46%;
+    -webkit-animation: animate-negative 4s;
+    animation: animate-negative 4s;
+}
+.bar.negative span {
+    right: 0;
+    color: #fff;
+}
+
+@-webkit-keyframes animate-positive {
+    0% {
+        width: 0%;
+    }
+}
+@keyframes animate-positive {
+    0% {
+        width: 0%;
+    }
+}
+@-webkit-keyframes animate-negative {
+    0% {
+        width: 100%;
+    }
+}
+@keyframes animate-negative {
+    0% {
+        width: 100%;
+    }
+}
+
 
 /*.row::after {
     content: "";
