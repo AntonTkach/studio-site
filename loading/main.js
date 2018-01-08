@@ -7,7 +7,6 @@ var gameData = {
     isMainLoaderSold: false,
     isMainLoadBarSold: false,
     isPercentSold: false,
-    isTimeSold:false,
     isMenuSold: false,
     isTabsSold: false,
     isTimeSold:false,
@@ -18,11 +17,11 @@ var gameData = {
     //currentBarSpeed: 0.1 
 };
 //var barSpeed = 0.1; // times per second 0.01-5
-var barSpeed = 900;// seconds per one run
+var barSpeed = 90;// seconds per one run
 function StartLoading() {
     var elem = gebi("mainLoader");
     var width = 0;
-    var value=0;
+    var value = 0;
     var timesRun = 0;
     var id = setInterval(frame, 10);
     function frame() {
