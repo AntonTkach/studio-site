@@ -12,7 +12,8 @@ body * {
     display: grid;
     grid-template-columns: repeat(100, 1%);
     grid-template-rows: repeat(100, 1%);
-    height: -webkit-fill-available;
+    /*height: -webkit-fill-available;*/
+    height: 100%;
     width: -webkit-fill-available;
     background: burlywood;
 }
@@ -25,6 +26,7 @@ body * {
     /*display: -webkit-box;*/
     grid-column: 20/80;
     grid-row: 40;
+    grid-row: 40/47;
     justify-content: center;
     background-color: aqua;
     background-color: black;
@@ -89,6 +91,14 @@ body {
     -ms-flex-pack: center;
     justify-content: center;
     height: 100%;
+}
+
+#menuHamburgerButton{
+    grid-column: 1;
+    grid-row: 1; /*Play wth these, set resposive*/
+    height: 40px;
+    width: 40px;
+    padding: 0;
 }
 
 /*.row::after {

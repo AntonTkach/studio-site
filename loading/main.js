@@ -71,3 +71,12 @@ function EnableStuff() {
         }
     }
 }
+
+function OpenMenu(){
+    var hamburgerClasslist=gebi("menuHamburgerButton").classList;
+    if (hamburgerClasslist.contains("is-active")) {
+        hamburgerClasslist.remove("is-active");
+    } else{
+        hamburgerClasslist.add("is-active");
+    }
+}
