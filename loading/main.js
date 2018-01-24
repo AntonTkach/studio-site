@@ -17,11 +17,12 @@ var gameData = {
     //currentBarSpeed: 0.1 
 };
 //var barSpeed = 0.1; // times per second 0.01-5
-var barSpeed = 90;// seconds per one run
+var barSpeed = 7;// seconds per one run
 function StartLoading() {
     var elem = gebi("mainLoader");
     var width = 0;
     var value = 0;
+    var maxValueLength = 0;
     var timesRun = 0;
     var id = setInterval(frame, 10);
     function frame() {
@@ -29,14 +30,28 @@ function StartLoading() {
             //clearInterval(id);
             width = 0;
             timesRun = 0;
+            maxValueLength = 0;
             gameData.points++;
             
         } else {
             timesRun++;
             
             width += 1 / barSpeed;
-            if (timesRun % 10 === 0) {
+            if (timesRun % 9 === 0) {
                 value = Math.round(width * 100 + Number.EPSILON) / 100;
+                var valueLength = value.toString().length;
+                if (valueLength > maxValueLength) {
+                    maxValueLength = valueLength;
+                }
+                if (valueLength < maxValueLength) {
+                    if (value.toString().indexOf(".") === -1) {
+                        value = value + "." + "0";
+                        valueLength = value.toString().length;
+                        if (valueLength < maxValueLength) { value += "0";}
+                    } else {
+                        value = value + "0";
+                    }
+                }
             }
             //value = Math.round(width * 100 + Number.EPSILON) / 100;
             elem.style.width = width + "%";
